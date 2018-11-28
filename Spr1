@@ -1,0 +1,29 @@
+Przemysław Niziński 36757, Katarzyna Kaczmarek 36731
+
+1.Otwieramy 1 terminal i uruchamiamy roscore
+roscore //1 terminal
+
+2.Otwiermay 2 terminal i w nim uruchamiamy symulację naszego żółwia
+rosrun turtlesim turtlesim_node //2 terminal
+
+3.Tworzymy połączenie między masterem (serwerem) a klientem
+export ROS_MASTER_URI=http:// IP:213.155.191.74/  //Wpisujemy IP komputera który ma być masterem (serwerem)
+
+4.Łączymy się z 2 komputera (klienta) do 1 komputera (serwera)
+export ROS_IP=213.155.191.74 // Wpisujemy IP komputera z którym chcemy się połączyć
+
+5.rosrun rqt_image_view rqt_image_view //Wyświetlenie sumulacji z żółwiem
+
+6.Otwieramy matlaba i tworzymy plik
+
+rosinit('213.155.191.74')
+pozycja=rossubscriber('/turtle1/pose') //Zczytujemy pozycje
+
+pozycja1=receive(pozycja,2);   // Zapisuje wartość pozycja do matlabla
+plot(pozycja1.X,pozycja1.Y,'x');  //Wyświetlam położenie żółwia w matlabie
+hold on
+xlim([0 15]) //granica x
+ylim([0 15]) //granica y
+end
+
+Pozycja zostaje zczytana oraz wyświetlona w matabie.
