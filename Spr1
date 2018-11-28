@@ -26,4 +26,4 @@ xlim([0 15]) //granica x
 ylim([0 15]) //granica y
 end
 
-Pozycja zostaje zczytana oraz wyświetlona w matabie.
+Pozycja zostaje zczytana oraz wyświetlona w matlabie.
